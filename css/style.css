@@ -12,7 +12,7 @@
 }
 
 :root {
-    --bg-color: black;
+    --bg-color: #1f242d;
     --second-bg-color: #323946;
     --text-color: white;
     --main-color: #0ef;
@@ -44,6 +44,10 @@ section {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+}
+
+.header.sticky {
+    border-bottom: .1rem solid rgba(0,0,0, .2);
 }
 
 .logo {
@@ -81,6 +85,19 @@ section {
     width: 30vw;
     padding-left: 10rem;
     border-radius: 10%;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2.4rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 .home-content h3{
     font-size: 3.2rem;
@@ -342,7 +359,7 @@ span {
 
 .footer{
     display:flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     padding: 2rem 9%;
@@ -362,4 +379,47 @@ span {
 .footer-iconTop a i {
     font-size: 2.4rem;
     color: var(--second-bg-color);
+  
 }
+
+/* BREAKPOINT */
+@media (max-width: 1200px){
+    html{
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 1118px){
+    .header{
+        padding: 2rem 3%;
+    }
+
+    section{
+        padding: 10rem 3% 2rem;
+    }
+
+    .footer{
+        padding: 2rem 3%;
+    }
+}
+
+@media (max-width: 760px){
+    #menu-icon{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0,0,0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0, .2);
+
+    }
+
+
+}
+
+ 

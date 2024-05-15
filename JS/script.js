@@ -17,4 +17,23 @@ window.onscroll = () => {
             });
         };
 });
+
+/*  sticky navbar */
+let header = document.querySelector('header');
+
+header.classList.toggle('sticky', window.scrollY > 100);
 };
+
+/* Scroll Reveal */
+ScrollReveal({
+    reset: true,
+    duration: 2000,
+    distance: '80px',
+    delay: 200
+});
+
+ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
+ScrollReveal().reveal('.home-content p, .about-img', { origin: 'left' });
+ScrollReveal().reveal('.about-content', { origin: 'right' });
+
