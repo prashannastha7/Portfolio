@@ -1,3 +1,12 @@
+/* toggle icon navbar*/
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+};
+
 /* Scroll sections active link */
 
 let sections = document.querySelectorAll('section');
@@ -37,3 +46,10 @@ ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact 
 ScrollReveal().reveal('.home-content p, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.about-content', { origin: 'right' });
 
+/*typed JS */
+const typed = new Typed('.multiple-text', {
+    strings: ['Backend Developer', 'Designer', 'Student'],
+    typeSpeed: 50,
+    backSpeed: 50,
+    loop: true
+});
