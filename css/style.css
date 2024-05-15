@@ -365,6 +365,13 @@ span {
     cursor: pointer;
 }
 
+#msg{
+    color:greenyellow;
+    margin-top: -20px;
+    display: block;
+    font-size: 15px;
+}
+
 .footer{
     display:flex;
     justify-content: space-between;

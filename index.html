@@ -114,18 +114,19 @@
                 <!-- Contact section design -->
     <section class ="contact" id="contact">
         <h2 class="heading">Contact <span>Me</span></h2>
-        <form action="#">
+        <form name = "submit-to-google-sheet" action="#"> 
             <div class="input-box">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email">
+                <input name = "Name" type="text" placeholder="Full Name">
+                <input name = "Email" type="email" placeholder="Email">
                 </div>
                 <div class="input-box">
-                <input type="number" placeholder="Phone no ">
+                <input name = "Phone" type="number" placeholder="Phone no ">
                 </div>
-                <textarea name ="" id="" cols="40" rows="5" placeholder="Write your message here..."></textarea>
-                <input type="submit" value="Send Message" class="btn">
-            </div>
+                <textarea name ="Message" id="" cols="40" rows="5" placeholder="Write your message here..."></textarea>
+                <button type="submit
+                " value="Send Message" class="btn">Submit</button>
             </form>
+            <span id="msg"></span>
     </section>
 
     <!-- footer section design -->
@@ -154,5 +155,24 @@
                   
     
     <script src="js/script.js"></script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz_dFrrXEE9cR1DZEpLASJwAMroYaa1doBGMWXeVhGXq6n9XPJo_X46UvDsSsAvi960/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Thanks for Contacting Me.. I Will Get Back to You Soon.."
+            setTimeout(function(){
+              msg.innerHTML = ""
+            }, 5000)
+            form.reset()}
+            )
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 </body>
 </html>
