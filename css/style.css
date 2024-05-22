@@ -305,6 +305,11 @@ span {
     margin: .3rem 0 1rem;
 }
 
+.portfolio-box.chatterbox{
+        width: 550px;
+        height: 242px;
+        transition: .5s ease;
+    }
 
 .portfolio-layer a{
     display: inline-flex;
